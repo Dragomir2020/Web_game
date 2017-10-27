@@ -1,4 +1,4 @@
-# Web_game_NN
+# Web_game
 - HTML, CSS and JS game to train a classifier on
 - Model will predict which direction based on nueral network and logistic regression classifier]
 
