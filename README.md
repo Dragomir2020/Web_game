@@ -1,6 +1,11 @@
 # Web_game
 - HTML, CSS and JS game to train a classifier on
-- Model will predict which direction based on nueral network and logistic regression classifier]
+- Model will predict which direction based on nueral network and logistic regression classifier
+
+# Unity_game
+- Block breaker 2D game that has sounds and navigation controls
+- Eventually would like to utilize C# to train model to play game possibly without blocks, but just feeds back
+the length of gameplay into NN
 
 ## Website link
 - https://dragomir2020.github.io/Web_game/HTML_embeded/index.html
