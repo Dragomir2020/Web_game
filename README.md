@@ -6,6 +6,8 @@
 - Block breaker 2D game that has sounds and navigation controls
 - Eventually would like to utilize C# to train model to play game possibly without blocks, but just feeds back
 the length of gameplay into NN
+## NN Library SharpNeuron
+- Clone of repo https://github.com/0xFireball/SharpNeuron modified to compile in C# 4.0
 
 ## Website link
 - https://dragomir2020.github.io/Web_game/HTML_embeded/index.html
