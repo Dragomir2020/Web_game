@@ -7,6 +7,6 @@ public class Paddle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float posInBlocks = Input.mousePosition.x / 800 * 16;
-		this.gameObject.transform.position  = new Vector3(Mathf.Clamp(posInBlocks, 0f, 15f), this.transform.position.y, -5.0f);
+		this.gameObject.transform.position  = new Vector3(Mathf.Clamp(posInBlocks, 0f, 14.5f), this.transform.position.y, -5.0f);
 	}
 }

@@ -380,7 +380,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -820,6 +820,8 @@ MonoBehaviour:
   Brick1: {fileID: 0}
   Brick2: {fileID: 0}
   Brick3: {fileID: 0}
+  PlaySpace: {fileID: 0}
+  level: 0
 --- !u!4 &832747634
 Transform:
   m_ObjectHideFlags: 0

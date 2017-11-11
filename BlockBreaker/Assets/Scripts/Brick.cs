@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-	public int MaxHits;
 	private int timesHit;
 	public Sprite[] hitSprites;
 
@@ -15,12 +14,22 @@ public class Brick : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D col){
 		timesHit++;
+		int MaxHits = hitSprites.Length + 1;
+		//if (GameObject.FindObjectsOfType<Brick> ().Length != 1) {
+			AudioSource.PlayClipAtPoint (gameObject.GetComponent<AudioSource> ().clip, transform.position);
+		//}
 		if (timesHit >= MaxHits) {
 			Destroy (this.gameObject);
-		} else if (timesHit == 1) {
-			this.GetComponent<SpriteRenderer> ().sprite = hitSprites [0];
-		} else if (timesHit == 2) {
-			this.GetComponent<SpriteRenderer> ().sprite = hitSprites [1];
+		} else{
+			LoadSprite (timesHit-1);
+		}
+	}
+
+	private void LoadSprite(int index){
+		if (this.tag == "Breakable") {
+			if (hitSprites [index]) {
+				this.GetComponent<SpriteRenderer> ().sprite = hitSprites [index];
+			}
 		}
 	}
 }

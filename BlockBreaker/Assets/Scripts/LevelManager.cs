@@ -7,8 +7,11 @@ public class LevelManager : MonoBehaviour {
 	public GameObject Brick1;
 	public GameObject Brick2;
 	public GameObject Brick3;
+	public GameObject PlaySpace;
 
-	private int level = 0;
+	public int level = 0;
+
+	static LevelManager instance = null;
 
 	public void LoadLevel(string name){
 		Debug.Log ("New Level load: " + name);
@@ -20,8 +23,16 @@ public class LevelManager : MonoBehaviour {
 		Application.Quit ();
 	}
 
+	void Start(){
+		if (instance != null) {
+			Destroy (gameObject);
+		} else {
+			instance = this;
+		}
+	}
+
 	void Update(){
-		if (GameObject.FindObjectOfType<Brick> () == null && SceneManager.GetActiveScene ().name.Equals("Levels")){
+		if (!GameObject.FindObjectOfType<Brick> () && SceneManager.GetActiveScene ().name.Equals("Levels")){
 			//No more bricks left
 			level++;
 			LoadNextLevel();
@@ -30,11 +41,12 @@ public class LevelManager : MonoBehaviour {
 				
 	//Load levels
 	void LoadNextLevel () {
+		//Destroy and create new game space each level
+		Destroy(GameObject.FindGameObjectWithTag("PlaySpace"));
+		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);
+		//Load Bricks for each level
 		if (level == 1) {
-			for (int i = 4; i < 12; i += 2) {
-				Instantiate (Brick1, new Vector3 (i, 8f, -5f), Quaternion.identity);
-				Instantiate (Brick2, new Vector3 (i, 8.5f, -5f), Quaternion.identity);
-			}
+			Instantiate (Brick1, new Vector3 (7.5f, 8f, -5f), Quaternion.identity);
 		}
 		if (level == 2) {
 			for (int i = 4; i < 12; i += 1) {
@@ -43,10 +55,10 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 		if (level == 3) {
-			for (int i = 4; i < 12; i += 2) {
+			for (int i = 4; i < 12; i += 1) {
 				Instantiate (Brick1, new Vector3 (i, 8f, -5f), Quaternion.identity);
 				Instantiate (Brick2, new Vector3 (i, 8.5f, -5f), Quaternion.identity);
-				Instantiate (Brick3, new Vector3 (i, 8.5f, -5f), Quaternion.identity);
+				Instantiate (Brick3, new Vector3 (i, 9f, -5f), Quaternion.identity);
 			}
 		}
 		if (level == 4) {
