@@ -611,6 +611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487552119}
   - component: {fileID: 1487552118}
+  - component: {fileID: 1487552120}
   m_Layer: 0
   m_Name: Lose Collider
   m_TagString: Untagged
@@ -641,7 +642,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 0.1}
+  m_Size: {x: 16, y: 2}
   m_EdgeRadius: 0
 --- !u!4 &1487552119
 Transform:
@@ -656,6 +657,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1487552120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1487552117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f269da67f9cc44cba438aaa34c97a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1613841274
 GameObject:
   m_ObjectHideFlags: 0
