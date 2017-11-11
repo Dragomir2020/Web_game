@@ -1,4 +1,4 @@
-# Web_game
+# HTML Web_game
 - HTML, CSS and JS game to train a classifier on
 - Model will predict which direction based on nueral network and logistic regression classifier
 
@@ -10,7 +10,7 @@ the length of gameplay into NN
 - Clone of repo https://github.com/0xFireball/SharpNeuron modified to compile in C# 4.0
 - TODO: Use to train unsupervised learning algorithm to play Unity game
 
-## Website link
+## HTML Website link
 - https://dragomir2020.github.io/Web_game/HTML_embeded/index.html
 
 ## TODO
