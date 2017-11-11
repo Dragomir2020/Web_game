@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallLaunch : MonoBehaviour {
 
+	public Text level;
 	private Paddle paddle;
-
 	private Vector3 paddleToBall;
 	private bool gameStarted;
 
@@ -24,7 +25,8 @@ public class BallLaunch : MonoBehaviour {
 			if (Input.GetMouseButtonDown(0)) {
 				gameStarted = true;
 				//Shoot ball
-				this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 10f);
+				this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f, 12f);
+				level.text = "";
 			}
 		}
 

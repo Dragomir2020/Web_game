@@ -6,16 +6,21 @@ public class Brick : MonoBehaviour {
 
 	public int MaxHits;
 	private int timesHit;
+	public Sprite[] hitSprites;
 
 	// Use this for initialization
 	void Start () {
 		timesHit = 0;
 	}
 
-	void OnCollisionEnter2D(Collision2D col){
+	void OnCollisionExit2D(Collision2D col){
 		timesHit++;
-		if (MaxHits == timesHit) {
+		if (timesHit >= MaxHits) {
 			Destroy (this.gameObject);
+		} else if (timesHit == 1) {
+			this.GetComponent<SpriteRenderer> ().sprite = hitSprites [0];
+		} else if (timesHit == 2) {
+			this.GetComponent<SpriteRenderer> ().sprite = hitSprites [1];
 		}
 	}
 }
