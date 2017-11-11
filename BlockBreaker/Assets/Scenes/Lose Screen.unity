@@ -410,6 +410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914b8a75977ed47209fdf798a93ddac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Brick1: {fileID: 0}
+  Brick2: {fileID: 0}
+  Brick3: {fileID: 0}
+  PlaySpace: {fileID: 0}
+  level: 0
 --- !u!4 &832747634
 Transform:
   m_ObjectHideFlags: 0
@@ -452,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94482756, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.8455882, g: 0, b: 0.29741338, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

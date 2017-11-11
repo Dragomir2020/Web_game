@@ -15,10 +15,10 @@ public class Brick : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D col){
 		timesHit++;
 		int MaxHits = hitSprites.Length + 1;
-		//if (GameObject.FindObjectsOfType<Brick> ().Length != 1) {
+		if (this.tag == "Breakable") {
 			AudioSource.PlayClipAtPoint (gameObject.GetComponent<AudioSource> ().clip, transform.position);
-		//}
-		if (timesHit >= MaxHits) {
+		}
+		if (timesHit >= MaxHits && this.tag == "Breakable") {
 			Destroy (this.gameObject);
 		} else{
 			LoadSprite (timesHit-1);

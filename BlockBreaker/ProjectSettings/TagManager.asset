@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlaySpace
   - Breakable
+  - Background
   layers:
   - Default
   - TransparentFX
