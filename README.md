@@ -8,6 +8,7 @@
 the length of gameplay into NN
 ## NN Library SharpNeuron
 - Clone of repo https://github.com/0xFireball/SharpNeuron modified to compile in C# 4.0
+- TODO: Use to train unsupervised leraning algorithm to play Unity game
 
 ## Website link
 - https://dragomir2020.github.io/Web_game/HTML_embeded/index.html
