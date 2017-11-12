@@ -49,6 +49,7 @@ public class BallLaunch : MonoBehaviour {
 			//Move ball along with paddle
 			this.transform.position = paddle.transform.position + paddleToBall;
 			if (Input.GetMouseButtonDown(0)) {
+				Application.CaptureScreenshot("Screenshot.png");
 				gameStarted = true;
 				//Shoot ball
 				this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);

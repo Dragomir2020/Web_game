@@ -51,11 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NN\NN.cs" />
      <Compile Include="Assets\Scripts\BallLaunch.cs" />
      <Compile Include="Assets\Scripts\Brick.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\LoseCollider.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+     <Compile Include="Assets\Scripts\NNSetupTrain.cs" />
      <Compile Include="Assets\Scripts\Paddle.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
@@ -77,6 +79,18 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="FANNCSharp.Double">
+ <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Double.dll</HintPath>
+ </Reference>
+ <Reference Include="FANNCSharp.Fixed">
+ <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Fixed.dll</HintPath>
+ </Reference>
+ <Reference Include="FANNCSharp">
+ <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.dll</HintPath>
+ </Reference>
+ <Reference Include="FANNCSharp.Float">
+ <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Float.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
