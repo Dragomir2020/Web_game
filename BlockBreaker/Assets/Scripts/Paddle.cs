@@ -32,7 +32,23 @@ public class Paddle : MonoBehaviour {
 			GameObject.FindObjectOfType<BallLaunch>().LaunchBall();
 			launchBall = true;
 		}
-		float ballPos = ball.transform.position.x;
-		this.gameObject.transform.position = new Vector3 (Mathf.Clamp (ballPos - 0.75f, 0f, 14.5f), this.transform.position.y, -5.0f);
+		//Only Move paddle 0.1 World units each time
+		float ballPos = ball.transform.position.x - 0.75f;
+		float tolerance = 0.1f;
+		float movement = 0.3f;
+		if ((this.gameObject.transform.position.x > ballPos) && ((this.gameObject.transform.position.x - ballPos) > tolerance)) {
+			if ((this.gameObject.transform.position.x - ballPos) > movement) {
+				this.gameObject.transform.position = new Vector3 (Mathf.Clamp (this.gameObject.transform.position.x - movement, 0f, 14.5f), this.transform.position.y, -5.0f);
+			} else {
+				this.gameObject.transform.position = new Vector3 (Mathf.Clamp (ballPos, 0f, 14.5f), this.transform.position.y, -5.0f);
+			}
+		}
+		if ((this.gameObject.transform.position.x < ballPos) && ((ballPos - this.gameObject.transform.position.x) > tolerance)) {
+			if ((ballPos - this.gameObject.transform.position.x) > movement) {
+				this.gameObject.transform.position = new Vector3 (Mathf.Clamp (this.gameObject.transform.position.x + movement, 0f, 14.5f), this.transform.position.y, -5.0f);
+			} else {
+				this.gameObject.transform.position = new Vector3 (Mathf.Clamp (ballPos, 0f, 14.5f), this.transform.position.y, -5.0f);
+			}
+		}
 	}
 }

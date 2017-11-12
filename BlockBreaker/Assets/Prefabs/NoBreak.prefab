@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61886843100235806}
   - component: {fileID: 114991270450180766}
   m_Layer: 0
-  m_Name: Stay
+  m_Name: NoBreak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

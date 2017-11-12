@@ -15,12 +15,10 @@ public class LevelManager : MonoBehaviour {
 	static LevelManager instance = null;
 
 	public void LoadLevel(string name){
-		Debug.Log ("New Level load: " + name);
 		SceneManager.LoadScene (name);
 	}
 
 	public void QuitRequest(){
-		Debug.Log ("Quit requested");
 		Application.Quit ();
 	}
 
@@ -40,8 +38,15 @@ public class LevelManager : MonoBehaviour {
 		}
 		if (!GameObject.FindObjectOfType<Brick> () && SceneManager.GetActiveScene ().name.Equals ("Start Menu")) {
 			//Have AI play on start menu
-			Debug.LogWarning("Yes I am working");
 			StartMenu();
+		}
+		if (!GameObject.FindObjectOfType<Brick> () && SceneManager.GetActiveScene ().name.Equals ("Lose Screen")) {
+			//Add Brick Border
+			AddBrickBorder();
+		}
+		if (!GameObject.FindObjectOfType<Brick> () && SceneManager.GetActiveScene ().name.Equals ("Win Screen")) {
+			//Add Brick Border
+			AddBrickBorder();
 		}
 	}
 				
@@ -85,26 +90,56 @@ public class LevelManager : MonoBehaviour {
 			count++;
 			for(float i = 0; i < 16; i++){
 				if ((count == 1 || count == 12) || (i == 0 || i == 15)) {
-					Instantiate (NoBreak, new Vector3 (i, j, -5f), Quaternion.identity);
+					Instantiate (NoBreak, new Vector3 (i, j, -3f), Quaternion.identity);
 				}
 			}
 		}
 		//Load Menu Blocks
-		count = 0;
-		for(float j = 6f; j > 2; j -= 0.3203f){
+		/*count = 0;
+		for(float j = 6f; j > 4; j -= 0.3203f){
 			count++;
 			for(float i = 5f; i < 11; i++){
-				if ((count == 1 || count == 13) || (i == 5f || i == 10f)) {
-					Instantiate (NoBreak, new Vector3 (i, j, -5f), Quaternion.identity);
+				if ((count == 1 || count == 7) || (i == 5f || i == 10f)) {
+					Instantiate (NoBreak, new Vector3 (i, j, -3f), Quaternion.identity);
 				}
 			}
-		}
+		}*/
 		//Load Breakable Blocks
+		count = 0;
+		for(float j = 7.8364f; j > 4; j -= 0.3203f){
+			for(float i = 0; i < 16; i++){
+				if (count % 3 == 0) {
+					Instantiate (Brick1, new Vector3 (i, j, -3f), Quaternion.identity);
+				} else if (count % 3 == 1) {
+					Instantiate (Brick2, new Vector3 (i, j, -3f), Quaternion.identity);
+				} else {
+					Instantiate (Brick3, new Vector3 (i, j, -3f), Quaternion.identity);
+				}
+				count++;
+			}
+		}
 
 		//Turn on basic AI for home screen
 		GameObject.FindObjectOfType<Paddle>().autoPlay = true;
 	}
 
-
+	private void AddBrickBorder(){
+		//Render Play Space
+		Destroy(GameObject.FindGameObjectWithTag("PlaySpace"));
+		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);
+		//Destroy Image
+		Destroy(GameObject.FindGameObjectWithTag("Background"));
+		Destroy(GameObject.Find("Paddle"));
+		Destroy(GameObject.Find("Ball"));
+		int count = 0;
+		for(float j = 11.68f; j > -1; j -= 0.3203f){
+			count++;
+			for(float i = 0; i < 16; i++){
+				if ((count == 1 || count == 38) || (i == 0 || i == 15)) {
+					Instantiate (NoBreak, new Vector3 (i, j, -3f), Quaternion.identity);
+				}
+			}
+		}
+	}
 
 }
