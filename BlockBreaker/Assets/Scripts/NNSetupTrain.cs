@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class NNSetupTrain : MonoBehaviour {
 
+	/*
 	// Use this for initialization
 	void Start () {
 
 		//Capture Screenshot and save image
-		Application.CaptureScreenshot("Screenshot.png");
+		ScreenCapture.CaptureScreenshot("Screenshot.png");
 		//NEED TO GET IMAGE
 
 
@@ -25,8 +26,8 @@ public class NNSetupTrain : MonoBehaviour {
 		string running_reward = null;
 		string prev_processed_observations = null;
 		Dictionary<string, List<float>> weights = new Dictionary<string, List<float>>();
-		weights.Add ("1", /*np.random.randn (num_hidden_layer_neurons, input_dimensions) / np.sqrt (input_dimensions)*/ 0f);
-		weights.Add ("2", /*np.random.randn (num_hidden_layer_neurons) / np.sqrt (num_hidden_layer_neurons)*/ 0f); 
+		weights.Add ("1", np.random.randn (num_hidden_layer_neurons, input_dimensions) / np.sqrt (input_dimensions) new List<float>());
+		weights.Add ("2", np.random.randn (num_hidden_layer_neurons) / np.sqrt (num_hidden_layer_neurons) new List<float>()); 
 			
 		Dictionary<string, float> expectation_g_squared = new Dictionary<string, List<float>>();
 		Dictionary<string, float> g_dict = new Dictionary<string, List<float>>();
@@ -34,11 +35,12 @@ public class NNSetupTrain : MonoBehaviour {
 		foreach(string layer_name in weights.Keys){
 			expectation_g_squared [layer_name] = ZerosList(weights [layer_name]);
 			g_dict [layer_name] = ZerosList(weights [layer_name].Count);
-			List<float> episode_hidden_layer_values = new List<float>();
-			List<float> episode_observations = new List<float>();
-			List<float> episode_gradient_log_ps = new List<float>();
-			List<float> episode_rewards = new List<float>();
 		}
+
+		List<float> episode_hidden_layer_values = new List<float>();
+		List<float> episode_observations = new List<float>();
+		List<float> episode_gradient_log_ps = new List<float>();
+		List<float> episode_rewards = new List<float>();
 
 		RunNN ();
 		
@@ -81,7 +83,7 @@ public class NNSetupTrain : MonoBehaviour {
 
 	private Dictionary<string, float> preprocess_observations(){
 		//convert the 210x160x3 uint8 frame into a 6400 float vector
-		/*processed_observation = input_observation[35:195] # crop
+		processed_observation = input_observation[35:195] # crop
 			processed_observation = downsample(processed_observation)
 			processed_observation = remove_color(processed_observation)
 			processed_observation = remove_background(processed_observation)
@@ -95,9 +97,9 @@ public class NNSetupTrain : MonoBehaviour {
 				else:
 					input_observation = np.zeros(input_dimensions)
 					# store the previous frame so we can subtract from it next time
-					prev_processed_observations = processed_observation*/
+					prev_processed_observations = processed_observation
 
 
 		return new Dictionary<string, float> ();
-	}
+	}*/
 }

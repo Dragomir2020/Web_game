@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class BallLaunch : MonoBehaviour {
 
@@ -49,7 +50,8 @@ public class BallLaunch : MonoBehaviour {
 			//Move ball along with paddle
 			this.transform.position = paddle.transform.position + paddleToBall;
 			if (Input.GetMouseButtonDown(0)) {
-				Application.CaptureScreenshot("Screenshot.png");
+				//ScreenCapture.CaptureScreenshot("Assets/Screenshot.png");
+				//Capture();
 				gameStarted = true;
 				//Shoot ball
 				this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);
@@ -62,7 +64,8 @@ public class BallLaunch : MonoBehaviour {
 	public void LaunchBall(){
 		gameStarted = true;
 		//Shoot ball
-		this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);
+		this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0f, 10f);
 		level.text = "";
 	}
+		
 }
