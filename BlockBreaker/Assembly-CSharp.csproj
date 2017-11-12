@@ -81,14 +81,14 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
+ <Reference Include="FANNCSharp">
+ <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.dll</HintPath>
+ </Reference>
  <Reference Include="FANNCSharp.Double">
  <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Double.dll</HintPath>
  </Reference>
  <Reference Include="FANNCSharp.Fixed">
  <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Fixed.dll</HintPath>
- </Reference>
- <Reference Include="FANNCSharp">
- <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.dll</HintPath>
  </Reference>
  <Reference Include="FANNCSharp.Float">
  <HintPath>/Users/dillondragomir/Desktop/UnityRepos/Web_game/BlockBreaker/Assets/FANNCSharp/FANNCSharp.Float.dll</HintPath>

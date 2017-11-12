@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour {
 		ClearEffects ();
 		//Destroy and create new game space each level
 		Destroy(GameObject.FindGameObjectWithTag("PlaySpace"));
-		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);s
+		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);
 		//Level 1
 		if (level == 1) {
 			Instantiate (Brick1, new Vector3 (7.5f, 8f, -5f), Quaternion.identity);
