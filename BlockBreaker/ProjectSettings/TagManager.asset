@@ -7,6 +7,7 @@ TagManager:
   - PlaySpace
   - Breakable
   - Background
+  - Smoke
   layers:
   - Default
   - TransparentFX

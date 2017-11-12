@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSprites: []
+  smoke: {fileID: 1984281626486968, guid: fab848ebac5254934884991dedce2549, type: 2}
 --- !u!212 &212246560886838484
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -52,26 +52,37 @@ public class LevelManager : MonoBehaviour {
 				
 	//Load levels
 	private void LoadNextLevel () {
+		//Clear effects at beggining of each level
+		ClearEffects ();
 		//Destroy and create new game space each level
 		Destroy(GameObject.FindGameObjectWithTag("PlaySpace"));
-		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);
-		//Load Bricks for each level here and add new levels
+		Instantiate (PlaySpace, new Vector3 (8f, 3f, 0f), Quaternion.identity);s
+		//Level 1
 		if (level == 1) {
 			Instantiate (Brick1, new Vector3 (7.5f, 8f, -5f), Quaternion.identity);
 		}
+		//Level 2
 		if (level == 2) {
-			for (int i = 4; i < 12; i += 1) {
+			for (int i = 1; i < 16; i += 2) {
 				Instantiate (Brick1, new Vector3 (i, 8f, -5f), Quaternion.identity);
-				Instantiate (Brick2, new Vector3 (i, 8.5f, -5f), Quaternion.identity);
+				Instantiate (Brick2, new Vector3 (i - 1f, 8f, -5f), Quaternion.identity);
 			}
 		}
+		//Level 3
 		if (level == 3) {
-			for (int i = 4; i < 12; i += 1) {
-				Instantiate (Brick1, new Vector3 (i, 8f, -5f), Quaternion.identity);
-				Instantiate (Brick2, new Vector3 (i, 8.5f, -5f), Quaternion.identity);
-				Instantiate (Brick3, new Vector3 (i, 9f, -5f), Quaternion.identity);
+			int count = 0;
+			for(float j = 10f; j > 8; j -= 0.3203f){
+				count++;
+				for(float i = 4; i < 12; i++){
+					if ((count == 1 || count == 7 || i == 4 || i == 11) && i % 2 == 0) {
+						Instantiate (Brick2, new Vector3 (i, j, -3f), Quaternion.identity);
+					} else if((count == 1 || count == 7 || i == 4 || i == 11) && i % 2 == 1){
+						Instantiate (Brick1, new Vector3 (i, j, -3f), Quaternion.identity);
+					}
+				}
 			}
 		}
+		//Win
 		if (level == 4) {
 			this.LoadLevel ("Win Screen");
 		}
@@ -94,16 +105,6 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
-		//Load Menu Blocks
-		/*count = 0;
-		for(float j = 6f; j > 4; j -= 0.3203f){
-			count++;
-			for(float i = 5f; i < 11; i++){
-				if ((count == 1 || count == 7) || (i == 5f || i == 10f)) {
-					Instantiate (NoBreak, new Vector3 (i, j, -3f), Quaternion.identity);
-				}
-			}
-		}*/
 		//Load Breakable Blocks
 		count = 0;
 		for(float j = 7.8364f; j > 4; j -= 0.3203f){
@@ -139,6 +140,14 @@ public class LevelManager : MonoBehaviour {
 					Instantiate (NoBreak, new Vector3 (i, j, -3f), Quaternion.identity);
 				}
 			}
+		}
+	}
+
+	private void ClearEffects(){
+		//Get all smoke instances and destroy them
+		GameObject[] objs = GameObject.FindGameObjectsWithTag ("Smoke");
+		foreach (GameObject obj in objs){
+			Destroy (obj);
 		}
 	}
 

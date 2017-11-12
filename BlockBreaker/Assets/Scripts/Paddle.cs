@@ -13,7 +13,7 @@ public class Paddle : MonoBehaviour {
 		if (!autoPlay) {
 			MoveWithMouse ();
 		} else {
-			AI ();
+			AI (0.1f, 0.3f);
 		}
 	}
 
@@ -26,7 +26,7 @@ public class Paddle : MonoBehaviour {
 		this.gameObject.transform.position = new Vector3 (Mathf.Clamp (posInBlocks, 0f, 14.5f), this.transform.position.y, -5.0f);
 	}
 
-	private void AI(){
+	private void AI(float tolerance, float movement){
 		//Only do once
 		if (!launchBall) {
 			GameObject.FindObjectOfType<BallLaunch>().LaunchBall();
@@ -34,8 +34,6 @@ public class Paddle : MonoBehaviour {
 		}
 		//Only Move paddle 0.1 World units each time
 		float ballPos = ball.transform.position.x - 0.75f;
-		float tolerance = 0.1f;
-		float movement = 0.3f;
 		if ((this.gameObject.transform.position.x > ballPos) && ((this.gameObject.transform.position.x - ballPos) > tolerance)) {
 			if ((this.gameObject.transform.position.x - ballPos) > movement) {
 				this.gameObject.transform.position = new Vector3 (Mathf.Clamp (this.gameObject.transform.position.x - movement, 0f, 14.5f), this.transform.position.y, -5.0f);

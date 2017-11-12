@@ -6,6 +6,7 @@ public class Brick : MonoBehaviour {
 
 	private int timesHit;
 	public Sprite[] hitSprites;
+	public GameObject smoke;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,11 @@ public class Brick : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (gameObject.GetComponent<AudioSource> ().clip, transform.position);
 		}
 		if (timesHit >= MaxHits && this.tag == "Breakable") {
+			//Create Smoke instance
+			GameObject smokepuff =Instantiate (smoke, this.transform.position, Quaternion.identity); //Instaniate at brick location
+			//Play destroy animation
+			ParticleSystem.MainModule particle = smokepuff.GetComponent<ParticleSystem> ().main;
+			particle.startColor = this.GetComponent<SpriteRenderer> ().color;
 			Destroy (this.gameObject);
 		} else{
 			LoadSprite (timesHit-1);
@@ -27,8 +33,10 @@ public class Brick : MonoBehaviour {
 
 	private void LoadSprite(int index){
 		if (this.tag == "Breakable") {
-			if (hitSprites [index]) {
+			if (hitSprites [index] != null) {
 				this.GetComponent<SpriteRenderer> ().sprite = hitSprites [index];
+			} else {
+				Debug.LogError ("Sprite not added to Brick prefab. Add sprite in inspector.");
 			}
 		}
 	}
